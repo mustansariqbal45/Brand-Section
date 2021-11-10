@@ -1,0 +1,48 @@
+.wrap {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+.heading {
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col{
+    flex-direction: column;
+    width: 599px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product_details{
+    align-items: center;
+}
+
+.vendor_title, .flag{
+    margin: -8px 0;
+}
+
+.button{
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.button button {
+    border: 2px solid black;
+    background-color: white;
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 12px;
+}
+.vendor_img img {
+    border-radius: 50px;
+}
+.vendor_title,
+.flag {
+    padding: 8px;
+}

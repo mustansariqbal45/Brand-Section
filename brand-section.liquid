@@ -1,0 +1,87 @@
+<section class="page-width row">
+{% for block in section.blocks %}
+  <div class="col">
+    <div class="product_details row">
+      <div class="vendor_img">
+        {{ block.settings.vendor_pic | img_url:'50x50' | img_tag }}
+      </div>
+      <div>
+        <h2 class="vendor_title">
+          {{ block.settings.vendor_title }}
+        </h2>
+        <div class="flag">
+          {{ block.settings.flag | img_url:'15x25' | img_tag }}
+          <span>{{ block.settings.country_name }}</span>
+        </div>
+      </div>
+      <div class="btn">
+        <button>SHOP BRAND</button>
+      </div>
+    </div>
+
+    <div class="product_image">
+      {{ block.settings.brand_image | img_url:'500x500' | img_tag }}
+    </div>
+
+    <div class="product_desc">
+      <p>{{ block.settings.description }}</p>
+    </div>
+  </div>
+{% endfor%}
+</section>
+
+{% schema %}
+  {
+    "name": "Brand",
+	"settings": [
+      {
+        "type": "text",
+        "id": "brands",
+        "label": "Brands"
+      }
+  	],
+    "blocks": [
+      {
+        "name": "brand",
+        "type": "text",
+        "settings": [
+            {
+              "type": "text",
+              "id": "vendor_title",
+              "label": "Vendor Title"
+            },
+			{
+              "type": "image_picker",
+              "id": "vendor_pic",
+              "label": "Vendor Profile"
+            },
+			{
+              "type": "image_picker",
+              "id": "flag",
+              "label": "Flag"
+            },
+            {
+              "type": "text",
+              "id": "country_name",
+              "label": "Country Name"
+            },
+			{
+              "type": "image_picker",
+              "id": "brand_image",
+              "label": "Brand Image"
+            },
+            {
+              "type": "text",
+              "id": "description",
+              "label": "Description"
+            }
+          ]
+		}
+	],
+	"presets": [
+      {
+        "name": "Brands"
+      }
+    ]
+  }
+{% endschema %}
